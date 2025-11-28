@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Byresh Soradi | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of Byresh Soradi - Java Full Stack Developer and AI & ML Student."
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1f2937;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: #9ca3af;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #e5e7eb;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4rem 0 3rem;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.08);
+      color: #7dd3fc;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span {
+      color: #38bdf8;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: #9ca3af;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease, border 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #0f172a;
+      border-color: #38bdf8;
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+      border-color: #0ea5e9;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #e5e7eb;
+      border-color: #4b5563;
+    }
+
+    .btn-outline:hover {
+      border-color: #9ca3af;
+      background: rgba(15, 23, 42, 0.7);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .hero-meta span {
+      color: #e5e7eb;
+    }
+
+    .hero-right {
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-card {
+      width: 260px;
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.2rem;
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      border: 1px solid #1f2937;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.7);
+      text-align: center;
+    }
+
+    .avatar {
+      width: 84px;
+      height: 84px;
+      border-radius: 999px;
+      border: 2px solid #38bdf8;
+      margin: 0 auto 0.9rem;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #38bdf8;
+    }
+
+    .profile-name {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .profile-role {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 0.9rem;
+    }
+
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .profile-tag {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(55, 65, 81, 0.7);
+      color: #e5e7eb;
+    }
+
+    .profile-links {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .profile-links a {
+      color: #7dd3fc;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0 2rem;
+      border-top: 1px solid #111827;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      margin-bottom: 1.4rem;
+    }
+
+    /* About */
+    .about-text {
+      font-size: 0.95rem;
+      color: #d1d5db;
+      max-width: 720px;
+    }
+
+    .about-text p + p {
+      margin-top: 0.7rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 0.8rem;
+    }
+
+    .skill-card {
+      border-radius: 0.9rem;
+      padding: 1rem;
+      background: #020617;
+      border: 1px solid #1f2937;
+    }
+
+    .skill-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .skill-tags span {
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(31, 41, 55, 0.9);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      border-radius: 0.9rem;
+      padding: 1rem;
+      background: #020617;
+      border: 1px solid #1f2937;
+    }
+
+    .project-name {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-stack {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-desc {
+      font-size: 0.85rem;
+      color: #d1d5db;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-links {
+      font-size: 0.8rem;
+    }
+
+    .project-links a {
+      color: #7dd3fc;
+    }
+
+    /* Experience */
+    .timeline {
+      border-left: 1px solid #1f2937;
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .timeline-item {
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -0.52rem;
+      top: 0.3rem;
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 999px;
+      background: #38bdf8;
+    }
+
+    .timeline-role {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .timeline-meta {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: #d1d5db;
+    }
+
+    /* Contact */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .contact-text {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-details {
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+
+    .contact-details div {
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-details span {
+      color: #e5e7eb;
+    }
+
+    form {
+      background: #020617;
+      padding: 1rem;
+      border-radius: 0.9rem;
+      border: 1px solid #1f2937;
+      font-size: 0.85rem;
+    }
+
+    .form-group {
+      margin-bottom: 0.8rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #d1d5db;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.45rem 0.6rem;
+      border-radius: 0.5rem;
+      border: 1px solid #374151;
+      background: #020617;
+      color: #e5e7eb;
+      font-size: 0.85rem;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #38bdf8;
+    }
+
+    footer {
+      border-top: 1px solid #020617;
+      padding: 1rem 0 1.5rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    footer a {
+      color: #7dd3fc;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 3rem;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">BYRESH SORADI</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+    <!-- HERO -->
+  <main class="container">
+    <section class="hero" id="home">
+      <div>
+        <div class="hero-badge">
+          <span>👋</span>
+          <span>Open to Full Stack / Java roles</span>
+        </div>
+        <h1 class="hero-title">
+          Hi, I'm <span>Byresh Soradi</span><br />
+          Java Full Stack Developer
+        </h1>
+        <p class="hero-subtitle">
+          B.Tech CSE (AI & ML) student from Presidency University, Bengaluru.
+          I enjoy building clean, scalable web applications using Java, Spring, and modern
+          frontend technologies.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+
+        <p class="hero-meta">
+          🎓 Graduation: <span>November 2025</span> · 📍 Based in <span>Bengaluru, India</span>
+        </p>
+      </div>
+
+      <div class="hero-right">
+        <div class="profile-card">
+          <div class="avatar">B</div>
+          <div class="profile-name">Byresh Soradi</div>
+          <div class="profile-role">Java Full Stack Developer · AI & ML</div>
+          <div class="profile-tags">
+            <span>Java</span>
+            <span>Spring Boot</span>
+            <span>React</span>
+            <span>SQL</span>
+          </div>
+          <div class="profile-links">
+            <div>📧 <a href="mailto:byreshsoradi1234@gmail.com">byreshsoradi1234@gmail.com</a></div>
+            <div>
+              🔗 <a href="https://www.linkedin.com/in/byresh-soradi-087a232a1" target="_blank"
+                >LinkedIn</a
+              >
+              · <a href="https://github.com/Byresh16" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Who I am and what I do.</p>
+      <div class="about-text">
+        <p>
+          I'm a Computer Science student specializing in Artificial Intelligence and Machine Learning,
+          currently in my final year at Presidency University, Bengaluru. Alongside academics, I focus
+          on building real-world applications with strong backend logic and smooth user experiences.
+        </p>
+        <p>
+          I have hands-on experience as a Java Full Stack Developer intern at Prodhee Technology, where
+          I worked on building and improving web applications, writing clean APIs, and collaborating
+          with teams using Git and modern development workflows.
+        </p>
+        <p>
+          My interests include backend development with Java and Spring Boot, RESTful services, database design,
+          and experimenting with frontend frameworks like React. I'm actively looking for opportunities
+          in Java development, full stack roles, and challenging projects where I can grow and contribute.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-subtitle">Technologies and tools I work with.</p>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-title">Programming</div>
+          <div class="skill-tags">
+            <span>Java</span>
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>C++</span>
+            <span>SQL</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-title">Web & Frontend</div>
+          <div class="skill-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Angular</span>
+            <span>JSP</span>
+            <span>Servlets</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-title">Backend & APIs</div>
+          <div class="skill-tags">
+            <span>Java</span>
+            <span>Python</span>
+            <span>Spring Boot</span>
+            <span>JDBC</span>
+            <span>Hibernate (JPA)</span>
+            <span>REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-title">Databases & Cloud</div>
+          <div class="skill-tags">
+            <span>MySQL</span>
+            <span>MongoDB</span>
+            <span>Supabase</span>
+            <span>Firebase</span>
+            <span>AWS EC2</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-title">Tools & Others</div>
+          <div class="skill-tags">
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Postman</span>
+            <span>Docker</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">Some things I've built and worked on.</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-name">Employee Management System</div>
+          <div class="project-stack">Java · JSP · Servlets · Hibernate · MySQL</div>
+          <p class="project-desc">
+            A full-featured web application to manage employee records with CRUD operations, search filters,
+            and validation, following MVC architecture with a clean DAO and service layer.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Byresh16/Employee-Management-System" target="_blank">GitHub Repo</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-name">Second-hand Car Buying App</div>
+          <div class="project-stack">React · Firebase/Supabase</div>
+          <p class="project-desc">
+            A platform where users can browse second-hand cars, view details, and send purchase requests,
+            with admin features for managing car listings.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Byresh16/Second-hand-Car-Buying-Application" target="_blank">GitHub Repo</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-name">Bus Booking System API</div>
+          <div class="project-stack">Express · MongoDB · JWT · Docker · AWS EC2</div>
+          <p class="project-desc">
+            Backend API for managing buses, routes, and bookings with JWT authentication, refresh tokens,
+            and Dockerized deployment on AWS EC2.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Byresh16/Task-2-Bus-Booking-System-API" target="_blank">GitHub Repo</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-name">Movie & Anime Streaming Website</div>
+          <div class="project-stack">React · Supabase</div>
+          <p class="project-desc">
+            A streaming-style UI for browsing movies and anime, integrated with Supabase for data storage,
+            authentication, and basic watchlist features.
+          </p>
+          <div class="project-links">
+            <a href="#" target="_blank">GitHub Repo</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-name">Weather Forecast App</div>
+          <div class="project-stack">HTML · CSS · JavaScript</div>
+          <p class="project-desc">
+            A simple, responsive web app that fetches and displays weather data for a given city using a
+            public weather API.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Byresh16/Weather" target="_blank">GitHub Repo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2 class="section-title">Experience & Education</h2>
+      <p class="section-subtitle">Where I've learned and worked.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-role">Java Full Stack Developer Intern · Prodhee Technology</div>
+          <div class="timeline-meta">2025 · Offline / Bengaluru</div>
+          <p class="timeline-desc">
+            Worked on developing and maintaining full stack web applications, writing REST APIs,
+            integrating databases, and collaborating with the team using Git and agile practices.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-role">B.Tech in CSE (AI & ML) · Presidency University</div>
+          <div class="timeline-meta"> Bengaluru</div>
+          <p class="timeline-desc">
+            Studied core computer science subjects along with AI & ML concepts like machine learning,
+            data structures, algorithms, and software engineering.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">Interested in working together or have a question?</p>
+      <div class="contact-wrapper">
+        <div>
+          <p class="contact-text">
+            Whether you have a job opportunity, a project idea, or a question about my work,
+            feel free to reach out. I'm open to Java backend, full stack, and related roles,
+            internships, or freelance projects.
+          </p>
+          <div class="contact-details">
+            <div>📧 Email: <span>byreshsoradi1234@gmail.com</span></div>
+            <div>
+              🔗 LinkedIn:
+              <span
+                ><a href="https://www.linkedin.com/in/byresh-soradi-087a232a1" target="_blank"
+                  >View Profile</a
+                ></span
+              >
+            </div>
+            <div>
+              💻 GitHub:
+              <span><a href="https://github.com/Byresh16" target="_blank">GitHub</a></span>
+            </div>
+            <div>📍 Location: <span>Bengaluru, India</span></div>
+          </div>
+        </div>
+
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Write your message here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Send Message (demo)
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> · Built by Byresh Soradi. View this portfolio on
+    <a href="#">GitHub</a>.
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
